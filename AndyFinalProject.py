@@ -59,17 +59,17 @@ while True:
 #Takes user input (7.4)
 #Uses a regular expression "re.match(r'^\d+$', user_input)" to make sure the number is an integer. 
             if re.match(r'^\d+$', user_input):
-            row_number = int(user_input)
+                row_number = int(user_input)
 #Searches for row number
-            search_result = df.iloc[[row_number]]
-            if not search_result.empty:
+                search_result = df.iloc[[row_number]]
+                if not search_result.empty:
 #Displays the results for row number
-                print("\nSearch Result:")
-                print(search_result)
+                    print("\nSearch Result:")
+                    print(search_result)
 #Takes the results and adds it to a CSV file (8.4) (7.3)
-                search_result.to_csv(r'search_result.csv',index=False)
-                print("Search result printed to 'search_result.csv")
-            else:
+                    search_result.to_csv(r'search_result.csv',index=False)
+                    print("Search result printed to 'search_result.csv")
+                else:
 #If row number not found
                     print("\nRow not found.")
             else:
