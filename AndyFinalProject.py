@@ -16,3 +16,16 @@ df = pd.read_csv(Weight_Height)
 #Individuals are categorize into light, normal, and heavy for weight using bins. 
 df['Height_Category'] = pd.cut(df['Height'], bins=[0, 58, 65, float('inf')], labels=['Short', 'Normal', 'Tall'])
 df['Weight_Category'] = pd.cut(df['Weight'], bins=[0, 110, 170, float('inf')], labels=['Light', 'Normal', 'Heavy'])
+
+#Displays the dataFrame with height and weight categories
+print("DataFrame with Height and Weight Categories:")
+print(df)
+
+#Getting a subset of the DataFrame using a boolean for "Tall Males Only"
+subset_tall_males = df[(df['Height_Category'] == 'Tall') & (df['Gender'] == 'Male')]
+
+#Display the DataFrame with added columns and subset
+print("\nDataFrame with Subset:")
+print(df)
+print("\nSubset of Tall Males:")
+print(subset_tall_males)
