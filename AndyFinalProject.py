@@ -29,3 +29,7 @@ print("\nDataFrame with Subset:")
 print(df)
 print("\nSubset of Tall Males:")
 print(subset_tall_males)
+
+#Calculates the average height and weight for each gender
+average_height = df.groupby('Gender')['Height'].mean()
+average_weight = df.groupby('Gender')['Weight'].mean()
