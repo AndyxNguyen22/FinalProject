@@ -63,6 +63,9 @@ while True:
 #Displays the results for row number
                 print("\nSearch Result:")
                 print(search_result)
+#Takes the results and adds it to a CSV file (8.4)
+                search_result.to_csv('search_result.csv',index=False)
+                print("Search result printed to 'search_result.csv")
             else:
 #If row number not found
                 print("\nRow not found.")
