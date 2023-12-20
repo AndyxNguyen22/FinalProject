@@ -41,3 +41,31 @@ print(average_height)
 #Display the results for Average Weight
 print("\nAverage Weight:")
 print(average_weight)
+
+#Search for a specific row based on user input 
+print("\nSearch for a Specific Row by Row Number:")
+
+#Allows the user to search for a row they want.
+#The program then gives the user the information for the row they want.
+while True:
+    try:
+        user_input = input("\nEnter the row number to search or type 'quit' to exit: ")
+#Allows the user to quit the program if they type in "quit"
+        if user_input.lower() == 'quit':
+            print("Exiting the program. Thank you for using, goodbye!")
+            break
+        else:
+#Takes user input
+            row_number = int(user_input)
+#Searches for row number
+            search_result = df.iloc[[row_number]]
+            if not search_result.empty:
+#Displays the results for row number
+                print("\nSearch Result:")
+                print(search_result)
+            else:
+#If row number not found
+                print("\nRow not found.")
+#if user inputs a invalid input. User needs to enter an integer.
+    except ValueError:
+        print("Invalid input. Please enter a valid integer row number or type 'quit to exit.")
