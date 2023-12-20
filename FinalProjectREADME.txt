@@ -26,6 +26,7 @@ The user can quit the program whenever they please.
 
 If the user inputs a row number, the code finds the row nunber and displays the result to the user.
 The user will have access to the row number, gender, height, weight, what height category the person fell under, and what weight category the person fell under.
+The results will also be taken and added to a CSV file.
 The user can input the row number again or type quit to exit the program.
 
 ############################
