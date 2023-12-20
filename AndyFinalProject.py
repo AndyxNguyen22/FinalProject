@@ -7,11 +7,11 @@ import pandas as pd
 #Imports CSV File
 Weight_Height = "weight-height.CSV"
 
-#Data and reading CSV file
+#Data and reading CSV file (8.2)
 data = pd.read_csv
 df = pd.read_csv(Weight_Height)
 
-#Vectorized computation to categorize individuals
+#Vectorized computation to categorize individuals (8.1)
 #Individuals are categorize into short, normal, and tall for height using bins.
 #Individuals are categorize into light, normal, and heavy for weight using bins. 
 df['Height_Category'] = pd.cut(df['Height'], bins=[0, 58, 65, float('inf')], labels=['Short', 'Normal', 'Tall'])
@@ -21,10 +21,10 @@ df['Weight_Category'] = pd.cut(df['Weight'], bins=[0, 110, 170, float('inf')], l
 print("DataFrame with Height and Weight Categories:")
 print(df)
 
-#Getting a subset of the DataFrame using a boolean for "Tall Males Only"
+#Getting a subset of the DataFrame using a boolean for "Tall Males Only" (8.3)
 subset_tall_males = df[(df['Height_Category'] == 'Tall') & (df['Gender'] == 'Male')]
 
-#Display the DataFrame with added columns and subset
+#Display the DataFrame with added columns and subset (8.3) (7.2)
 print("\nDataFrame with Subset:")
 print(df)
 print("\nSubset of Tall Males:")
@@ -38,11 +38,11 @@ average_weight = df.groupby('Gender')['Weight'].mean()
 print("\nAverage Height:")
 print(average_height)
 
-#Display the results for Average Weight
+#Display the results for Average Weight (7.2)
 print("\nAverage Weight:")
 print(average_weight)
 
-#Search for a specific row based on user input 
+#Search for a specific row based on user input (7.2)
 print("\nSearch for a Specific Row by Row Number:")
 
 #Allows the user to search for a row they want.
@@ -63,8 +63,8 @@ while True:
 #Displays the results for row number
                 print("\nSearch Result:")
                 print(search_result)
-#Takes the results and adds it to a CSV file (8.4)
-                search_result.to_csv('search_result.csv',index=False)
+#Takes the results and adds it to a CSV file (8.4) (7.3)
+                search_result.to_csv(r'search_result.csv',index=False)
                 print("Search result printed to 'search_result.csv")
             else:
 #If row number not found
