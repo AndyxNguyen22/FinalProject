@@ -3,6 +3,7 @@
 #Importing 
 import numpy 
 import pandas as pd
+import re
 
 #Imports CSV File
 Weight_Height = "weight-height.CSV"
@@ -55,7 +56,9 @@ while True:
             print("Exiting the program. Thank you for using, goodbye!")
             break
         else:
-#Takes user input
+#Takes user input (7.4)
+#Uses a regular expression "re.match(r'^\d+$', user_input)" to make sure the number is an integer. 
+            if re.match(r'^\d+$', user_input):
             row_number = int(user_input)
 #Searches for row number
             search_result = df.iloc[[row_number]]
@@ -68,7 +71,9 @@ while True:
                 print("Search result printed to 'search_result.csv")
             else:
 #If row number not found
-                print("\nRow not found.")
+                    print("\nRow not found.")
+            else:
+                print("\nInvalid input. Please enter avalid integer row number or type 'quit to exit. ")
 #if user inputs a invalid input. User needs to enter an integer.
     except ValueError:
         print("Invalid input. Please enter a valid integer row number or type 'quit to exit.")
