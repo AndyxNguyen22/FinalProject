@@ -33,3 +33,11 @@ print(subset_tall_males)
 #Calculates the average height and weight for each gender
 average_height = df.groupby('Gender')['Height'].mean()
 average_weight = df.groupby('Gender')['Weight'].mean()
+
+#Display the results for Average Height
+print("\nAverage Height:")
+print(average_height)
+
+#Display the results for Average Weight
+print("\nAverage Weight:")
+print(average_weight)
